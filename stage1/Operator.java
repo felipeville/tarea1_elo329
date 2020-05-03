@@ -9,14 +9,20 @@ public class Operator {
         t = inFile.nextFloat();
     }
     public boolean takeAction(float time){
-        float f;
+        
         if (time > t) {
-            //f = inFile.nextFloat();
-            l_Joystick.setHorPos(inFile.nextFloat());
-            l_Joystick.setVerPos(inFile.nextFloat());
-            r_Joystick.setHorPos(inFile.nextFloat());
-            r_Joystick.setVerPos(inFile.nextFloat());
-            if(inFile.hasNext)
+            /* Check if there's any element left in the file */
+            if(inFile.hasNext()){
+                l_Joystick.setHorPos(inFile.nextFloat());
+                l_Joystick.setVerPos(inFile.nextFloat());
+                r_Joystick.setHorPos(inFile.nextFloat());
+                r_Joystick.setVerPos(inFile.nextFloat());
+                
+                if(inFile.hasNext())
+                    t = inFile.nextFloat();
+            }
+            else
+                return false;
         }
         return true;
     }
