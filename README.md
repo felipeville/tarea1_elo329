@@ -1,2 +1,10 @@
-# tarea1_elo329
-T1_ELO329_2020S1
+# Tarea 1 ELO329
+
+## Etapa 1
+
+Consola:
+
+```
+javac Stage1Test.java
+java Stage1Test entrada.csv > salida.csv
+```
