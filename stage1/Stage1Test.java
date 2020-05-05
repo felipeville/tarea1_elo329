@@ -18,6 +18,6 @@ public class Stage1Test  {
             time+=0.1;
         }
         
-        in.close();
+        //in.close();
     }
 }
