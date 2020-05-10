@@ -13,8 +13,8 @@ java Stage1Test entrada.csv > salida.csv
 
 El archivo de entrada se supone que hace lo siguiente:
 ```
-1. Deja elevar el dron hasta 1 [m]
-2. Sube y baja al dron (en ese orden)
+1. Deja elevar el drone hasta 1 [m]
+2. Sube y baja al drone (en ese orden)
 3. Rota hasta (pi/2 + pi/4) [rad]
 4. Se mueve hacia delante y al lado, y luego retorna al origen
 5. Rota nuevamente hasta 0 [rad] (aproximadamente)
