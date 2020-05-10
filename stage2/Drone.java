@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Drone {
    public Drone () {
       fSpeed = 0;
@@ -20,7 +22,6 @@ public class Drone {
       float delta_t = t-time;
       switch (state) {
       case TAKING_OFF:  //drone moves only upwards in this stage
-          // Eleva el dron hasta TAKEOFF_HEIGHT = 1 [m]
           if( h < TAKEOFF_HEIGHT ){
             h += delta_t*TAKEOFF_LANDING_SPEED;
           }
@@ -28,11 +29,10 @@ public class Drone {
               this.state = State.FLYING;
           }
           break;
-            
       case FLYING:
           h += delta_t*vSpeed;
-          // Negative is left and positive right
           direction -= delta_t*rSpeed;
+          // Negative is left and positive right
           this.setPosition(direction, fSpeed, sSpeed, delta_t);
           break;
           
@@ -55,20 +55,22 @@ public class Drone {
       fSpeed = forwPer*MAX_F_SPEED;
       sSpeed = sidePer*MAX_S_SPEED;
    }
-   /* Funcion para cambio de coordenadas de acuerdo a la rotacion */
-   /* https://advancedsoftware.wordpress.com/2012/05/29/rotacion-en-r2-dos-dimensiones-2d/ */
    private void setPosition(float theta, float fSpeed, float sSpeed, float dt){
-       float x_, y_;
+       float x_, y_, phi;
        x_ = sSpeed*dt;
        y_ = fSpeed*dt;
-       x += x_*(float)Math.cos(theta) - y_*(float)Math.sin(theta);
-       y += x_*(float)Math.sin(theta) + y_*(float)Math.cos(theta);
+       /* phi es el angulo de rotacion de los ejes */
+       phi = theta - (float)Math.PI/2;  // theta = PI/2 corresponde a una rotacion de 0                       
+       x += x_*(float)Math.cos(phi) - y_*(float)Math.sin(phi);
+       y += x_*(float)Math.sin(phi) + y_*(float)Math.cos(phi);
    }
    public float getHeight() {
       return h;
    }
    public String toString() {
-      return x + ", " + y + ", " + h;
+       /* Print up to 5 decimal places */
+       DecimalFormat df = new DecimalFormat("##0.00000");
+       return df.format(x) + ", " + df.format(y) + ", " + df.format(h);
    }
    public void takeOff() {
       if (state==State.LANDED)
@@ -88,5 +90,5 @@ public class Drone {
    private static float MAX_S_SPEED;
    private static float MAX_R_SPEED;
    private static float TAKEOFF_LANDING_SPEED;
-   private final static float TAKEOFF_HEIGHT = 1;  // Altura por defecto
+   private final static float TAKEOFF_HEIGHT = 1;
 }
