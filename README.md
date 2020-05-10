@@ -17,7 +17,7 @@ El archivo de entrada se supone que hace lo siguiente:
 2. Sube y baja al dron (en ese orden)
 3. Rota hasta (pi/2 + pi/4) [rad]
 4. Se mueve hacia delante y al lado, y luego retorna al origen
-5. Rota nuevamente hasta 0 [rad] (aproximadamente, en realidad llega hasta 0.059)
+5. Rota nuevamente hasta 0 [rad] (aproximadamente)
 6. Se mueve hacia delante y hacia el lado
 7. Aterriza
 ```
