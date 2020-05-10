@@ -20,6 +20,7 @@ public class Drone {
       float delta_t = t-time;
       switch (state) {
       case TAKING_OFF:  //drone moves only upwards in this stage
+          // Eleva el dron hasta TAKEOFF_HEIGHT = 1 [m]
           if( h < TAKEOFF_HEIGHT ){
             h += delta_t*TAKEOFF_LANDING_SPEED;
           }
@@ -27,10 +28,11 @@ public class Drone {
               this.state = State.FLYING;
           }
           break;
+            
       case FLYING:
           h += delta_t*vSpeed;
-          direction -= delta_t*rSpeed;
           // Negative is left and positive right
+          direction -= delta_t*rSpeed;
           this.setPosition(direction, fSpeed, sSpeed, delta_t);
           break;
           
@@ -53,6 +55,8 @@ public class Drone {
       fSpeed = forwPer*MAX_F_SPEED;
       sSpeed = sidePer*MAX_S_SPEED;
    }
+   /* Funcion para cambio de coordenadas de acuerdo a la rotacion */
+   /* https://advancedsoftware.wordpress.com/2012/05/29/rotacion-en-r2-dos-dimensiones-2d/ */
    private void setPosition(float theta, float fSpeed, float sSpeed, float dt){
        float x_, y_;
        x_ = sSpeed*dt;
@@ -84,5 +88,5 @@ public class Drone {
    private static float MAX_S_SPEED;
    private static float MAX_R_SPEED;
    private static float TAKEOFF_LANDING_SPEED;
-   private final static float TAKEOFF_HEIGHT = 1;
+   private final static float TAKEOFF_HEIGHT = 1;  // Altura por defecto
 }
