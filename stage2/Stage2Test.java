@@ -11,6 +11,7 @@ public class Stage2Test  {
       SkyController skyController = new SkyController(drone);
       Operator operator = new Operator(in, skyController);
       skyController.pushTakeOff_Land(); // to take-off
+      System.out.println("t,\tx,   y,   h");
       while(operator.takeAction(time)) {
          skyController.takeAction(time);
          drone.takeAction(time);
