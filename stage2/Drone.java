@@ -55,6 +55,8 @@ public class Drone {
       fSpeed = forwPer*MAX_F_SPEED;
       sSpeed = sidePer*MAX_S_SPEED;
    }
+   /* Funcion para rotar los ejes de coordenadas */
+   /* https://advancedsoftware.wordpress.com/2012/05/29/rotacion-en-r2-dos-dimensiones-2d/ */
    private void setPosition(float theta, float fSpeed, float sSpeed, float dt){
        float x_, y_, phi;
        x_ = sSpeed*dt;
