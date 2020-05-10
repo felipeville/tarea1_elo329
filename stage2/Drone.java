@@ -31,8 +31,8 @@ public class Drone {
           break;
       case FLYING:
           h += delta_t*vSpeed;
-          direction -= delta_t*rSpeed;
           // Negative is left and positive right
+          direction -= delta_t*rSpeed;
           this.setPosition(direction, fSpeed, sSpeed, delta_t);
           break;
           
@@ -92,5 +92,5 @@ public class Drone {
    private static float MAX_S_SPEED;
    private static float MAX_R_SPEED;
    private static float TAKEOFF_LANDING_SPEED;
-   private final static float TAKEOFF_HEIGHT = 1;
+   private final static float TAKEOFF_HEIGHT = 1;  // Default height at take off 
 }
