@@ -37,7 +37,8 @@ public class Stage3Test  {
             time=getCurrentTime();
         } while (drone.getState()!=State.LANDED);
         System.out.printf("%.1f,\t"+drone+"\n",time);
-      
+        
+        /* Switch to Keyboard Inputs */
         Keyboard keyboard = new Keyboard(skyController);
         skyController.setInputDevice(keyboard); // we switch to another input device
         actionables.remove(operator);  // stop reading automatically from file
