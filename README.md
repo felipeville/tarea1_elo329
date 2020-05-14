@@ -21,3 +21,5 @@ El archivo de entrada se supone que hace lo siguiente:
 6. Se mueve hacia delante y hacia el lado
 7. Aterriza
 ```
+
+## Etapa 3
