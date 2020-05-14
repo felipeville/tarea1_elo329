@@ -23,3 +23,5 @@ El archivo de entrada se supone que hace lo siguiente:
 ```
 
 ## Etapa 3
+
+Después del archivo de entrada, el drone queda con dirección 'forward' en un ángulo de 0°, es decir, hacia las coordenadas 'x' positivas.
