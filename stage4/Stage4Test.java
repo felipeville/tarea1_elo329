@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.ArrayList;
 import java.lang.Math;
 
-public class AcrobaticDrones  {
+public class Stage4Test  {
     static {
        Locale.setDefault(Locale.US);
        t0=System.currentTimeMillis();  // time in ms since app 1970.
