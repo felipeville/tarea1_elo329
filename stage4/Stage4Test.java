@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.lang.Math;
 
-public class Stage3Test  {
+public class Stage4Test  {
     static {
        Locale.setDefault(Locale.US);
        t0=System.currentTimeMillis();  // time in ms since app 1970.
@@ -50,7 +50,6 @@ public class Stage3Test  {
                 device.takeAction(time);
             if (time >= nextPrintTime){
                 System.out.printf("\n%.1f,\t"+drone1+"\t\t"+drone2+"; move: ",time);
-                System.out.printf(String.valueOf(drone1.getState()!=State.LANDED));
                 nextPrintTime+=0.5;
             }
             sleepFor(0.1f);  // let 0.1 [s] pass to run at real time.
