@@ -18,7 +18,7 @@ CLASSES = \
 	InputDevice.java \
 	Keyboard.java
 
-MAIN = Stage3Test
+MAIN = Stage4Test
 
 default: classes
 
