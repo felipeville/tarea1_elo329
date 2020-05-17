@@ -7,7 +7,7 @@ FILEIN = entrada.csv
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
-	Stage4Test.java \
+	AcrobaticDrones.java \
 	Operator.java \
 	Joystick.java \
 	Joysticks.java \
@@ -18,7 +18,7 @@ CLASSES = \
 	InputDevice.java \
 	Keyboard.java
 
-MAIN = Stage4Test
+MAIN = AcrobaticDrones
 
 default: classes
 
